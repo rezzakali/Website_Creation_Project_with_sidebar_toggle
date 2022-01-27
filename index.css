@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.header {
+  background-color: #282c34;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+#opensidebarMenu:checked ~ #sidebarMenu {
+  transform: translateX(0px);
+}
+.opensidebarToggle {
+  width: 20px;
+  height: 20px;
+  z-index: 20;
+  margin-top: 15px;
+  position: absolute;
+  margin-left: 15px;
+  /* visibility: hidden; */
+}
+.opensidebarToggle .spinner {
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+.spinner.middle,
+.spinner.bottom {
+  margin-top: 3px;
+}
+.spinner.top,
+.spinner.middle,
+.spinner.bottom {
+  background-color: rgb(161, 157, 157);
+  cursor: pointer;
+}
+
+#opensidebarMenu:checked ~ .opensidebarToggle > .spinner.middle {
+  opacity: 0;
+}
+#opensidebarMenu:checked ~ .opensidebarToggle > .spinner.top {
+  transform: rotate(135deg);
+  margin-top: 8px;
+}
+#opensidebarMenu:checked ~ .opensidebarToggle > .spinner.bottom {
+  transform: rotate(-135deg);
+  margin-top: -9px;
+}
+#sidebarMenu {
+  background-color: #282c34;
+  height: 100%;
+  width: 150px;
+  margin-top: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+  /* visibility: hidden; */
+  transition: all 0.5s ease-in-out;
+  transform: translateX(-150px);
+}
+.main {
+  margin: 60px;
+  padding: 20px 40px;
+  height: 100%;
+}
+.munu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.munu li {
+  margin: 0;
+  padding: 0;
+}
+ul li a {
+  color: rgba(255, 255, 255, 0.877);
+  text-decoration: none;
+  margin: 10px;
+  display: block;
+}
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 10px;
+  text-align: center;
+  transition: all 0.1s ease-in;
+}
+ul li i {
+  font-size: 23px;
+  color: rgba(255, 255, 255, 0.788);
+}
+ul li:hover {
+  background: #454d5a56;
+}
+/* media queries */
+/* @media screen and (max-width: 768px) { */
+/* .sidebar-links {
+    display: none;
+  } */
+/* #sidebarMenu {
+    visibility: visible;
+  }
+  .opensidebarToggle {
+    visibility: visible;
+  }
+} */
